@@ -1,0 +1,84 @@
+{
+  "name": "@cartons/graphql-upload",
+  "version": "0.0.1-alpha.1",
+  "description": "Middleware and an Upload scalar to add support for GraphQL multipart requests (file uploads via queries and mutations) to various Node.js GraphQL servers.",
+  "license": "MIT",
+  "author": "Jayden Seric <me@jaydenseric.com> (https://jaydenseric.com)",
+  "repository": "https://github.com/Batched/graphql-upload",
+  "homepage": "https://github.com/Batched/graphql-upload#readme",
+  "bugs": "https://github.com/Batched/graphql-upload/issues",
+  "keywords": [
+    "graphql",
+    "upload",
+    "file",
+    "multipart",
+    "request",
+    "server",
+    "middleware",
+    "koa",
+    "express",
+    "apollo",
+    "esm",
+    "mjs",
+    "typescript"
+  ],
+  "files": [
+    "private",
+    "public",
+    "index.d.ts"
+  ],
+  "sideEffects": false,
+  "main": "./public/index.js",
+  "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./public/index.mjs",
+      "require": "./public/index.js"
+    },
+    "./public/*": "./public/*",
+    "./package": "./package.json",
+    "./package.json": "./package.json",
+    "./index.d.ts": "./index.d.ts"
+  },
+  "scripts": {
+    "jsdoc": "jsdoc-md",
+    "test": "yarn test:eslint && yarn test:prettier && yarn test:jsdoc && yarn test:api",
+    "test:eslint": "eslint .",
+    "test:prettier": "prettier -c .",
+    "test:jsdoc": "jsdoc-md -c",
+    "test:api": "coverage-node -r hard-rejection/register test/index.mjs",
+    "prepublishOnly": "yarn test"
+  },
+  "dependencies": {
+    "busboy": "^0.3.1",
+    "fs-capacitor": "^6.2.0",
+    "http-errors": "^1.8.0",
+    "isobject": "^4.0.0",
+    "object-path": "^0.11.8"
+  },
+  "devDependencies": {
+    "coverage-node": "^5.0.1",
+    "eslint": "^7.32.0",
+    "eslint-config-env": "^22.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-jsdoc": "^36.1.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "express": "^4.17.1",
+    "form-data": "^4.0.0",
+    "graphql": "^15.6.0",
+    "hard-rejection": "^2.1.0",
+    "jsdoc-md": "^11.0.2",
+    "koa": "^2.13.1",
+    "node-fetch": "^3.0.0",
+    "prettier": "^2.4.1",
+    "test-director": "^6.0.0"
+  },
+  "peerDependencies": {
+    "graphql": "0.13.1 - 15"
+  },
+  "engines": {
+    "node": ">= 14.17"
+  }
+}
