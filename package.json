@@ -67,7 +67,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "express": "^4.17.1",
     "form-data": "^4.0.0",
-    "graphql": "^15.6.0",
+    "graphql": "^16.1.0",
     "hard-rejection": "^2.1.0",
     "jsdoc-md": "^11.0.2",
     "koa": "^2.13.1",
